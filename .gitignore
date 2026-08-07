@@ -1,0 +1,27 @@
+# 公開しない作業メモ
+_dev-notes/
+
+# サイトで使っていない画像(元データ・旧版など)。手元には残すがGitHubには上げない
+images-no-use/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# エディタ
+.vscode/
+*.swp
+*~
+
+# Python(スクリプトを置く場合に備えて)
+__pycache__/
+*.py[cod]
+.venv/
+venv/

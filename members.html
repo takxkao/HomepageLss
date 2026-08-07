@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在校生ページ | L’ssプログラミング教室</title>
+  <meta name="description" content="L’ssプログラミング教室に通っている方向けのページです。ご利用にはパスワードが必要です。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-label">メニュー</span>
+      </button>
+      <a class="logo" href="index.html">
+        <span class="logo-text">Learner’s Solution</span>
+      </a>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="courses.html">コース紹介</a></li>
+          <li><a href="instructor.html">学習目標</a></li>
+          <li><a href="pricing.html">料金</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="trial.html">体験申込</a></li>
+          <li><a href="members.html" class="is-current">在校生ページ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="container">
+        <h1>在校生ページ</h1>
+        <p>通っている方へのご案内です。ご覧いただくにはパスワードが必要です。</p>
+      </div>
+    </section>
+
+    <!-- パスワード入力。合っていれば下の #member-content を表示する -->
+    <section class="section" id="member-gate">
+      <div class="container">
+        <form class="lock-form" id="lock-form">
+          <label class="lock-label" for="lock-password">パスワード</label>
+          <input class="lock-input" type="password" id="lock-password"
+                 autocomplete="current-password" required>
+          <button class="btn btn-primary" type="submit">ページを開く</button>
+          <p class="lock-error" id="lock-error" role="alert" hidden>
+            パスワードが違います。もう一度お試しください。
+          </p>
+          <p class="lock-note">
+            パスワードは教室でお知らせしています。わからない場合は教室までお問い合わせください。
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <div id="member-content" hidden>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">レッスンスケジュール</h2>
+          <p class="section-lead">クラスを欠席される場合は、LINEまたはお電話にてご連絡ください。</p>
+
+          <!-- 中身の差し替えは files/lesson-schedule.pdf を上書きするだけ。
+               ここのHTMLを編集する必要はありません -->
+          <p class="text-center">
+            <a class="btn btn-primary" href="files/lesson-schedule.pdf" target="_blank" rel="noopener">
+              スケジュール(PDF)を開く
+            </a>
+          </p>
+
+          <!-- 画面の広い端末では、開かなくてもそのまま読めるように埋め込む。
+               スマホでは埋め込みが小さく読みにくいためCSSで隠し、上のボタンから開いてもらう -->
+          <div class="pdf-embed">
+            <iframe src="files/lesson-schedule.pdf#view=FitH"
+                    title="レッスンスケジュール"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">教室のフリーWi-Fi</h2>
+          <p class="section-lead">ご自身のパソコンやタブレットを持ち込む場合にご利用ください。</p>
+
+          <!-- ▼ パスワードは載せていません(下の注意書きを参照) -->
+          <div class="table-wrap">
+            <table class="info-table">
+              <tbody>
+                <tr>
+                  <th>ネットワーク名(SSID)</th>
+                  <td>Deco_8C7D92EC_Guest</td>
+                </tr>
+                <tr>
+                  <th>パスワード</th>
+                  <td>(教室で配布しているものを入力してください)</td>
+                </tr>
+                <tr>
+                  <th>セキュリティ方式</th>
+                  <td>WPA2-PSK(AES)</td>
+                </tr>
+                <tr>
+                  <th>利用できる時間</th>
+                  <td>レッスンの時間中</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="section-title">つなぎ方</h3>
+          <ol class="note-list">
+            <li>端末のWi-Fi設定を開きます。</li>
+            <li>ネットワークの一覧から上のSSIDを選びます。</li>
+            <li>パスワードを入力して「接続」を押します。</li>
+            <li>ブラウザでページが開けば接続完了です。</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container text-center">
+          <h2 class="section-title">ご連絡・ご相談</h2>
+          <p>振替やお休みのご連絡は、お電話またはメールでお願いします。</p>
+          <p>
+            TEL: <a href="tel:0284556127">0284-55-6127</a><br>
+            メール: <a href="mailto:learners.solution@gmail.com">learners.solution@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <img class="footer-logo" src="images/logo-lss-white.png" alt="L’ssプログラミング教室">
+        <p>〒326-0034 栃木県足利市久松町12<br>TEL: 0284-55-6127</p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="courses.html">コース紹介</a></li>
+          <li><a href="instructor.html">学習目標</a></li>
+          <li><a href="pricing.html">料金</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="trial.html">体験申込</a></li>
+          <li><a href="members.html">在校生ページ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copyright">&copy; 2026 L’ssプログラミング教室</p>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/members.js"></script>
+
+</body>
+</html>
