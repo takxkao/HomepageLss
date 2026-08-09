@@ -1,0 +1,7 @@
+# 全ページのクロールを許可する。
+# 在校生ページは members.html 側の noindex 指定で検索結果から外している。
+# ここで Disallow にすると noindex を読んでもらえなくなるため、あえて許可している。
+User-agent: *
+Allow: /
+
+Sitemap: https://learners-solution.com/sitemap.xml
