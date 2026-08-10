@@ -74,16 +74,73 @@
       <div class="container">
         <h2 class="section-title">お申し込みフォーム</h2>
         <p class="section-lead">下のフォームに入力して送信してください。折り返しご連絡いたします。</p>
-        <div class="form-wrap">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSe1U7c0Bg7Q-8Jce4_9TDc6yDb63AvrjKcPmOgKf3X75pDVRA/viewform?embedded=true"
-            title="体験レッスン申込フォーム"
-            loading="lazy">読み込んでいます…</iframe>
+
+        <form class="trial-form" id="trial-form">
+          <p class="form-privacy">
+            ご記入いただいた個人情報は、体験レッスンのご連絡以外には使用いたしません。
+          </p>
+
+          <!-- 日程を入れ替えるときは、この中の label を書き替える。
+               value に書いた文字が、そのまま申込メールと記録用シートに残る。
+               日程を増やすときは label ごとコピーして貼り付ける -->
+          <fieldset class="form-field">
+            <legend class="form-label">体験会 参加日<span class="form-badge">必須</span></legend>
+            <p class="form-note">参加できる日程にチェックを入れてください。(複数回答可)</p>
+            <label class="form-check">
+              <input type="checkbox" name="dates" value="2026年8月16日(日) 15:00〜15:45">
+              <span>2026年8月16日(日) 15:00〜15:45</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" name="dates" value="2026年8月30日(日) 15:00〜15:45">
+              <span>2026年8月30日(日) 15:00〜15:45</span>
+            </label>
+          </fieldset>
+
+          <div class="form-field">
+            <label class="form-label" for="form-name">保護者氏名<span class="form-badge is-optional">任意</span></label>
+            <input class="form-input" type="text" id="form-name" name="name" autocomplete="name">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="form-tel">電話番号<span class="form-badge">必須</span></label>
+            <p class="form-note">日中つながりやすい番号をご記入ください。</p>
+            <input class="form-input" type="tel" id="form-tel" name="tel" autocomplete="tel" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="form-message">その他(ご意見・ご質問など)<span class="form-badge is-optional">任意</span></label>
+            <textarea class="form-textarea" id="form-message" name="message" rows="4"></textarea>
+          </div>
+
+          <!-- 自動投稿(bot)よけ。画面には出ない欄で、ここに入力のあった送信は捨てる。
+               人が触ることはないので、この2行は消さないこと -->
+          <div class="form-honeypot" aria-hidden="true">
+            <label>ご住所<input type="text" name="address" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+
+          <button class="btn btn-primary form-submit" type="submit" id="form-submit">この内容で申し込む</button>
+        </form>
+
+        <!-- 送信が終わったら、上のフォームと入れ替えでこちらを表示する -->
+        <div class="trial-form form-done" id="form-done" hidden tabindex="-1">
+          <h3>送信しました</h3>
+          <p>お申し込みありがとうございます。教室から折り返しご連絡いたします。</p>
+          <p class="form-note">
+            2〜3日たっても連絡がない場合は、お手数ですが
+            <a href="tel:0284556127">0284-55-6127</a> までお電話ください。
+          </p>
         </div>
-        <p class="text-center">
-          フォームが表示されない場合は
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1U7c0Bg7Q-8Jce4_9TDc6yDb63AvrjKcPmOgKf3X75pDVRA/viewform" target="_blank" rel="noopener">こちらから直接お申し込みください</a>。
-        </p>
+
+        <noscript>
+          <p class="text-center">
+            お使いのブラウザではフォームをご利用いただけません。
+            お手数ですが <a href="tel:0284556127">0284-55-6127</a> または
+            <a href="mailto:learners.solution@gmail.com">learners.solution@gmail.com</a>
+            までご連絡ください。
+          </p>
+        </noscript>
       </div>
     </section>
 
@@ -136,6 +193,7 @@
   </footer>
 
   <script src="js/menu.js"></script>
+  <script src="js/trial-form.js"></script>
 
 </body>
 </html>

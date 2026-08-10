@@ -639,18 +639,160 @@ a:hover {
   text-align: left;
 }
 
-/* 埋め込みフォーム(Googleフォーム) */
-.form-wrap {
-  margin-bottom: 16px;
+/* 体験申込フォーム(自作。送信先は Apps Script → js/trial-form.js) */
+.trial-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
 }
 
-.form-wrap iframe {
-  display: block;
-  width: 100%;
-  height: 1100px;
+/* 冒頭の個人情報についてのお断り */
+.form-privacy {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+/* fieldset は既定で枠線と余白が付くため、他の項目と同じ見た目に揃える */
+.form-field {
+  margin: 0 0 28px;
+  padding: 0;
   border: 0;
+}
+
+.form-label {
+  display: block;
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-main-dark);
+}
+
+/* 必須 / 任意 の小さな札 */
+.form-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  vertical-align: 2px;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.form-badge.is-optional {
+  background: var(--color-bg-alt);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border);
+}
+
+.form-note {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
   background: #fff;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
+}
+
+.form-textarea {
+  display: block;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-check input:focus-visible {
+  outline: 2px solid var(--color-main);
+  outline-offset: 1px;
+}
+
+/* チェックボックスの選択肢。枠全体を押せるようにして、指でも選びやすくする */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.form-check + .form-check {
+  margin-top: 10px;
+}
+
+.form-check:hover {
+  background: var(--color-bg-alt);
+}
+
+.form-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  /* 行の中心ではなく1行目の文字に合わせる */
+  margin-top: 0.3em;
+  accent-color: var(--color-main);
+}
+
+/* botよけの隠し欄。display:none だと入力欄と見なさない自動投稿ツールがあるため、
+   画面の外へ追い出す形で隠す */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-error {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #fdecea;
+  color: #b3261e;
+  font-weight: bold;
+}
+
+.form-submit {
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-submit:disabled {
+  background: var(--color-border);
+  color: var(--color-text-light);
+  cursor: default;
+}
+
+/* 送信後にフォームと入れ替えで出す完了メッセージ */
+.form-done {
+  text-align: center;
+}
+
+.form-done h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: var(--color-main-dark);
 }
 
 
@@ -794,6 +936,15 @@ a:hover {
 
   .course {
     padding: 24px 20px;
+  }
+
+  .trial-form {
+    padding: 24px 20px;
+  }
+
+  /* 上の .btn の max-width:320px を打ち消し、送信ボタンは横幅いっぱいのままにする */
+  .form-submit {
+    max-width: none;
   }
 
   .course-spec {
