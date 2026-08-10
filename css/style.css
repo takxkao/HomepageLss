@@ -28,7 +28,10 @@
   --color-bg-alt: #fbf7e0;      /* 薄い黄色(帯・ヒーロー・テーブルの縞) */
   --color-border: #e2e0c2;
 
-  --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
+  /* Windowsの "Yu Gothic" は既定で細字になり読みにくいため、
+     先に Medium を指定して字面を太めに揃える */
+  --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+               "Yu Gothic Medium", "YuGothic", "Yu Gothic",
                "Meiryo", sans-serif;
 
   --container-width: 1080px;
