@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var body = new URLSearchParams();
     body.append('dates', dates.join(' / '));
     body.append('name', fields.name.value);
+    body.append('email', fields.email.value);
     body.append('tel', fields.tel.value);
     body.append('message', fields.message.value);
 

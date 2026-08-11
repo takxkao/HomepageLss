@@ -73,7 +73,7 @@
     <section class="section section-alt">
       <div class="container">
         <h2 class="section-title">お申し込みフォーム</h2>
-        <p class="section-lead">下のフォームに入力して送信してください。折り返しご連絡いたします。</p>
+        <p class="section-lead">下のフォームに入力して送信してください。ご記入のメールアドレスあてに、教室からご連絡いたします。</p>
 
         <form class="trial-form" id="trial-form">
           <p class="form-privacy">
@@ -97,13 +97,19 @@
           </fieldset>
 
           <div class="form-field">
-            <label class="form-label" for="form-name">保護者氏名<span class="form-badge is-optional">任意</span></label>
-            <input class="form-input" type="text" id="form-name" name="name" autocomplete="name">
+            <label class="form-label" for="form-name">保護者氏名<span class="form-badge">必須</span></label>
+            <input class="form-input" type="text" id="form-name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="form-email">メールアドレス<span class="form-badge">必須</span></label>
+            <p class="form-note">教室からのご連絡は、こちらのメールアドレスに差し上げます。</p>
+            <input class="form-input" type="email" id="form-email" name="email" autocomplete="email" required>
           </div>
 
           <div class="form-field">
             <label class="form-label" for="form-tel">電話番号<span class="form-badge">必須</span></label>
-            <p class="form-note">日中つながりやすい番号をご記入ください。</p>
+            <p class="form-note">メールでご連絡がつかない場合にお電話します。日中つながりやすい番号をご記入ください。</p>
             <input class="form-input" type="tel" id="form-tel" name="tel" autocomplete="tel" required>
           </div>
 
@@ -126,10 +132,17 @@
         <!-- 送信が終わったら、上のフォームと入れ替えでこちらを表示する -->
         <div class="trial-form form-done" id="form-done" hidden tabindex="-1">
           <h3>送信しました</h3>
-          <p>お申し込みありがとうございます。教室から折り返しご連絡いたします。</p>
+          <p>
+            お申し込みありがとうございます。<br>
+            ご記入いただいたメールアドレスあてに、教室からご連絡いたします。
+          </p>
           <p class="form-note">
-            2〜3日たっても連絡がない場合は、お手数ですが
-            <a href="tel:0284556127">0284-55-6127</a> までお電話ください。
+            迷惑メールフォルダに入ってしまうことがありますので、
+            <a href="mailto:learners.solution@gmail.com">learners.solution@gmail.com</a>
+            からのメールが受け取れるようご設定ください。<br>
+            メールでご連絡がつかない場合は、ご記入の電話番号にお電話いたします。
+            2〜3日たってもどちらも連絡がない場合は、お手数ですが
+            <a href="tel:0284556127">0284-55-6127</a> までお問い合わせください。
           </p>
         </div>
 
