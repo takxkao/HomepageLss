@@ -510,6 +510,56 @@ a:hover {
   color: var(--color-main-dark);
 }
 
+/* 講師が公開しているアプリの紹介(学習目標ページ) */
+.app-showcase {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.app-showcase h3 {
+  font-size: 1.2rem;
+  color: var(--color-main-dark);
+  margin-bottom: 8px;
+}
+
+.app-showcase-tagline {
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.app-showcase-text p:not(.app-showcase-tagline) {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.app-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Google Playのバッジ画像は、周囲に余白が多く含まれているため、
+   App Storeのバッジと高さを揃えても横に間延びして見える。
+   実際の見た目の高さが揃うよう、少しだけ大きくする */
+.app-badges img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.app-badges a:nth-child(2) img {
+  height: 60px;
+  margin: -6px 0;
+}
+
 /* 学習目標(教室からのメッセージ) */
 .message {
   max-width: 760px;
